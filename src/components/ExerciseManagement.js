@@ -244,6 +244,554 @@ const ExerciseManagement = ({ appData, updateAppData }) => {
       caloriesBurned: 35,
       image: '⚔️',
       tips: 'Keep front knee aligned over ankle, not past toes'
+    },
+
+    // Additional Stretching Exercises
+    {
+      id: 'piriformis-stretch',
+      name: 'Piriformis Stretch',
+      category: 'stretching',
+      difficulty: 'beginner',
+      duration: 240,
+      instructions: [
+        'Lie on back with both knees bent',
+        'Cross right ankle over left knee',
+        'Grab behind left thigh and pull toward chest',
+        'Hold for 30 seconds, feel stretch in right hip',
+        'Switch sides and repeat'
+      ],
+      benefits: ['Relieves sciatic pain', 'Stretches hip muscles', 'Reduces lower back tension'],
+      targetMuscles: ['Piriformis', 'Glutes', 'Hip flexors'],
+      equipment: 'None',
+      caloriesBurned: 18,
+      image: '🦵',
+      tips: 'If you can\'t reach your thigh, use a towel for assistance'
+    },
+    {
+      id: 'spinal-twist',
+      name: 'Supine Spinal Twist',
+      category: 'stretching',
+      difficulty: 'beginner',
+      duration: 300,
+      instructions: [
+        'Lie on back with arms extended to sides',
+        'Bring knees to chest, then drop to one side',
+        'Keep shoulders flat on ground',
+        'Hold for 30 seconds each side',
+        'Breathe deeply and relax into the stretch'
+      ],
+      benefits: ['Improves spinal mobility', 'Releases back tension', 'Aids digestion'],
+      targetMuscles: ['Spine', 'Lower back', 'Obliques'],
+      equipment: 'None',
+      caloriesBurned: 20,
+      image: '🌪️',
+      tips: 'Don\'t force the stretch - let gravity help you'
+    },
+    {
+      id: 'hamstring-stretch',
+      name: 'Supine Hamstring Stretch',
+      category: 'stretching',
+      difficulty: 'beginner',
+      duration: 240,
+      instructions: [
+        'Lie on back with one leg extended',
+        'Lift other leg straight up',
+        'Hold behind thigh or use towel around foot',
+        'Keep leg straight and pull gently',
+        'Hold 30 seconds each leg'
+      ],
+      benefits: ['Stretches hamstrings', 'Reduces lower back strain', 'Improves flexibility'],
+      targetMuscles: ['Hamstrings', 'Calves', 'Lower back'],
+      equipment: 'Towel (optional)',
+      caloriesBurned: 15,
+      image: '🦵',
+      tips: 'Keep the extended leg on the ground to protect your back'
+    },
+    {
+      id: 'hip-flexor-stretch',
+      name: 'Hip Flexor Stretch',
+      category: 'stretching',
+      difficulty: 'beginner',
+      duration: 240,
+      instructions: [
+        'Start in lunge position',
+        'Lower back knee to ground',
+        'Push hips forward gently',
+        'Feel stretch in front of back hip',
+        'Hold 30 seconds each side'
+      ],
+      benefits: ['Stretches hip flexors', 'Improves posture', 'Reduces back tension'],
+      targetMuscles: ['Hip flexors', 'Quadriceps', 'Psoas'],
+      equipment: 'None',
+      caloriesBurned: 22,
+      image: '🏃',
+      tips: 'Place a pillow under your knee for comfort'
+    },
+    {
+      id: 'cobra-stretch',
+      name: 'Cobra Stretch',
+      category: 'stretching',
+      difficulty: 'intermediate',
+      duration: 180,
+      instructions: [
+        'Lie face down with palms under shoulders',
+        'Press palms down and lift chest',
+        'Keep hips on ground',
+        'Look forward, not up',
+        'Hold for 15-30 seconds'
+      ],
+      benefits: ['Strengthens back muscles', 'Improves spinal extension', 'Counteracts slouching'],
+      targetMuscles: ['Lower back', 'Spine', 'Core'],
+      equipment: 'None',
+      caloriesBurned: 25,
+      image: '🐍',
+      tips: 'Start small and gradually increase the lift'
+    },
+    {
+      id: 'seated-spinal-twist',
+      name: 'Seated Spinal Twist',
+      category: 'stretching',
+      difficulty: 'beginner',
+      duration: 240,
+      instructions: [
+        'Sit tall in chair with feet flat',
+        'Place right hand on left knee',
+        'Rotate torso to the left',
+        'Hold back of chair with left hand',
+        'Hold 30 seconds each side'
+      ],
+      benefits: ['Office-friendly', 'Improves spinal mobility', 'Reduces stiffness'],
+      targetMuscles: ['Spine', 'Obliques', 'Lower back'],
+      equipment: 'Chair',
+      caloriesBurned: 12,
+      image: '💺',
+      tips: 'Perfect for desk workers - do this hourly'
+    },
+    {
+      id: 'doorway-chest-stretch',
+      name: 'Doorway Chest Stretch',
+      category: 'stretching',
+      difficulty: 'beginner',
+      duration: 180,
+      instructions: [
+        'Stand in doorway with arms on frame',
+        'Step forward with one foot',
+        'Lean forward gently',
+        'Feel stretch across chest',
+        'Hold for 30 seconds'
+      ],
+      benefits: ['Counteracts rounded shoulders', 'Opens chest', 'Improves posture'],
+      targetMuscles: ['Chest', 'Shoulders', 'Upper back'],
+      equipment: 'Doorway',
+      caloriesBurned: 10,
+      image: '🚪',
+      tips: 'Adjust arm height to target different chest areas'
+    },
+    {
+      id: 'neck-stretch',
+      name: 'Gentle Neck Stretch',
+      category: 'stretching',
+      difficulty: 'beginner',
+      duration: 180,
+      instructions: [
+        'Sit or stand with good posture',
+        'Slowly tilt head to right shoulder',
+        'Hold for 15 seconds',
+        'Return to center and tilt left',
+        'Repeat forward and back gently'
+      ],
+      benefits: ['Relieves neck tension', 'Improves range of motion', 'Reduces headaches'],
+      targetMuscles: ['Neck', 'Upper trapezius', 'Scalenes'],
+      equipment: 'None',
+      caloriesBurned: 8,
+      image: '💆',
+      tips: 'Never force or rotate the neck aggressively'
+    },
+    {
+      id: 'figure-four-stretch',
+      name: 'Figure-4 Hip Stretch',
+      category: 'stretching',
+      difficulty: 'beginner',
+      duration: 300,
+      instructions: [
+        'Sit in chair with good posture',
+        'Place right ankle on left knee',
+        'Gently lean forward keeping back straight',
+        'Feel stretch in right hip and glute',
+        'Hold 30 seconds, switch sides'
+      ],
+      benefits: ['Stretches hips', 'Relieves piriformis tension', 'Chair-friendly'],
+      targetMuscles: ['Hips', 'Glutes', 'Piriformis'],
+      equipment: 'Chair',
+      caloriesBurned: 15,
+      image: '🪑',
+      tips: 'Keep your back straight as you lean forward'
+    },
+
+    // Additional Strengthening Exercises
+    {
+      id: 'wall-sit',
+      name: 'Wall Sit',
+      category: 'strengthening',
+      difficulty: 'beginner',
+      duration: 300,
+      instructions: [
+        'Stand with back against wall',
+        'Slide down until thighs parallel to floor',
+        'Keep knees at 90 degrees',
+        'Hold position for 15-60 seconds',
+        'Gradually increase hold time'
+      ],
+      benefits: ['Strengthens legs', 'Improves endurance', 'Supports lower back'],
+      targetMuscles: ['Quadriceps', 'Glutes', 'Core'],
+      equipment: 'Wall',
+      caloriesBurned: 40,
+      image: '🧱',
+      tips: 'Keep your back flat against the wall throughout'
+    },
+    {
+      id: 'side-plank',
+      name: 'Modified Side Plank',
+      category: 'strengthening',
+      difficulty: 'intermediate',
+      duration: 240,
+      instructions: [
+        'Lie on side with knees bent',
+        'Support upper body on forearm',
+        'Lift hips off ground',
+        'Hold for 15-30 seconds',
+        'Switch sides and repeat'
+      ],
+      benefits: ['Strengthens obliques', 'Improves lateral stability', 'Supports spine'],
+      targetMuscles: ['Obliques', 'Core', 'Shoulders'],
+      equipment: 'Yoga mat',
+      caloriesBurned: 35,
+      image: '📐',
+      tips: 'Start with knees down version, progress to straight legs'
+    },
+    {
+      id: 'dead-bug',
+      name: 'Dead Bug Exercise',
+      category: 'strengthening',
+      difficulty: 'intermediate',
+      duration: 480,
+      instructions: [
+        'Lie on back with arms straight up',
+        'Bring knees to 90 degrees',
+        'Lower opposite arm and leg slowly',
+        'Return to start position',
+        'Alternate sides for 10 reps each'
+      ],
+      benefits: ['Core stability', 'Improves coordination', 'Protects lower back'],
+      targetMuscles: ['Core', 'Hip flexors', 'Shoulders'],
+      equipment: 'None',
+      caloriesBurned: 45,
+      image: '🪲',
+      tips: 'Keep your back pressed to the floor throughout'
+    },
+    {
+      id: 'clamshells',
+      name: 'Clamshell Exercise',
+      category: 'strengthening',
+      difficulty: 'beginner',
+      duration: 360,
+      instructions: [
+        'Lie on side with knees bent',
+        'Keep feet together',
+        'Lift top knee while keeping feet connected',
+        'Lower slowly and repeat',
+        'Do 15 reps each side'
+      ],
+      benefits: ['Strengthens hip abductors', 'Improves hip stability', 'Prevents knee pain'],
+      targetMuscles: ['Hip abductors', 'Glutes', 'Core'],
+      equipment: 'None',
+      caloriesBurned: 30,
+      image: '🦪',
+      tips: 'Keep your body in a straight line, don\'t roll backward'
+    },
+    {
+      id: 'superman',
+      name: 'Superman Exercise',
+      category: 'strengthening',
+      difficulty: 'intermediate',
+      duration: 300,
+      instructions: [
+        'Lie face down with arms extended',
+        'Lift chest and legs off ground simultaneously',
+        'Hold for 2-3 seconds',
+        'Lower slowly and repeat',
+        'Do 10-15 repetitions'
+      ],
+      benefits: ['Strengthens back muscles', 'Improves posture', 'Builds core stability'],
+      targetMuscles: ['Lower back', 'Glutes', 'Shoulders'],
+      equipment: 'None',
+      caloriesBurned: 40,
+      image: '🦸',
+      tips: 'Start with small movements and gradually increase range'
+    },
+    {
+      id: 'wall-pushup',
+      name: 'Wall Push-up',
+      category: 'strengthening',
+      difficulty: 'beginner',
+      duration: 240,
+      instructions: [
+        'Stand arm\'s length from wall',
+        'Place palms flat against wall',
+        'Lean in and push back',
+        'Keep body straight throughout',
+        'Do 10-15 repetitions'
+      ],
+      benefits: ['Builds upper body strength', 'Low-impact', 'Improves posture'],
+      targetMuscles: ['Chest', 'Shoulders', 'Triceps'],
+      equipment: 'Wall',
+      caloriesBurned: 25,
+      image: '🤲',
+      tips: 'Great starting point for building push-up strength'
+    },
+    {
+      id: 'heel-raises',
+      name: 'Calf Raises',
+      category: 'strengthening',
+      difficulty: 'beginner',
+      duration: 240,
+      instructions: [
+        'Stand with feet hip-width apart',
+        'Rise up onto balls of feet',
+        'Hold for 2 seconds',
+        'Lower slowly and repeat',
+        'Do 15-20 repetitions'
+      ],
+      benefits: ['Strengthens calves', 'Improves balance', 'Supports lower leg'],
+      targetMuscles: ['Calves', 'Ankles', 'Balance'],
+      equipment: 'None',
+      caloriesBurned: 20,
+      image: '🦵',
+      tips: 'Hold onto something for balance if needed'
+    },
+    {
+      id: 'pelvic-tilt',
+      name: 'Pelvic Tilt',
+      category: 'strengthening',
+      difficulty: 'beginner',
+      duration: 300,
+      instructions: [
+        'Lie on back with knees bent',
+        'Tighten abdominal muscles',
+        'Tilt pelvis to flatten back against floor',
+        'Hold for 5 seconds',
+        'Repeat 10-15 times'
+      ],
+      benefits: ['Strengthens core', 'Improves posture', 'Relieves back pain'],
+      targetMuscles: ['Core', 'Lower back', 'Hip flexors'],
+      equipment: 'None',
+      caloriesBurned: 25,
+      image: '⚖️',
+      tips: 'Focus on using abdominal muscles, not leg muscles'
+    },
+
+    // Additional Cardio Exercises
+    {
+      id: 'stationary-bike',
+      name: 'Stationary Cycling',
+      category: 'cardio',
+      difficulty: 'beginner',
+      duration: 1800, // 30 minutes
+      instructions: [
+        'Adjust seat to proper height',
+        'Start with 5-minute warm-up at easy pace',
+        'Maintain moderate intensity',
+        'Keep posture upright',
+        'Cool down with 5 minutes easy pedaling'
+      ],
+      benefits: ['Low-impact cardio', 'Strengthens legs', 'Improves endurance'],
+      targetMuscles: ['Legs', 'Glutes', 'Cardiovascular system'],
+      equipment: 'Stationary bike',
+      caloriesBurned: 250,
+      image: '🚴',
+      tips: 'Adjust resistance to maintain comfortable conversation pace'
+    },
+    {
+      id: 'swimming',
+      name: 'Gentle Swimming',
+      category: 'cardio',
+      difficulty: 'intermediate',
+      duration: 2400, // 40 minutes
+      instructions: [
+        'Start with 5-minute easy warm-up',
+        'Alternate between different strokes',
+        'Focus on smooth, controlled movements',
+        'Take breaks as needed',
+        'Cool down with easy floating or walking'
+      ],
+      benefits: ['Zero-impact exercise', 'Full-body workout', 'Excellent for back pain'],
+      targetMuscles: ['Full body', 'Cardiovascular system'],
+      equipment: 'Swimming pool',
+      caloriesBurned: 320,
+      image: '🏊',
+      tips: 'Backstroke is particularly good for people with back pain'
+    },
+    {
+      id: 'elliptical',
+      name: 'Elliptical Training',
+      category: 'cardio',
+      difficulty: 'beginner',
+      duration: 1500, // 25 minutes
+      instructions: [
+        'Start with 5-minute warm-up',
+        'Maintain upright posture',
+        'Use arm handles for upper body',
+        'Keep moderate, steady pace',
+        'Cool down gradually'
+      ],
+      benefits: ['Low-impact cardio', 'Full-body exercise', 'Joint-friendly'],
+      targetMuscles: ['Full body', 'Cardiovascular system'],
+      equipment: 'Elliptical machine',
+      caloriesBurned: 200,
+      image: '🏃',
+      tips: 'Don\'t lean heavily on handles - engage your core'
+    },
+    {
+      id: 'chair-exercises',
+      name: 'Chair Cardio',
+      category: 'cardio',
+      difficulty: 'beginner',
+      duration: 900, // 15 minutes
+      instructions: [
+        'Sit tall in sturdy chair',
+        'March in place lifting knees',
+        'Add arm movements',
+        'Include shoulder rolls and stretches',
+        'Maintain steady rhythm'
+      ],
+      benefits: ['Accessible cardio', 'Improves circulation', 'Can be done anywhere'],
+      targetMuscles: ['Full body', 'Cardiovascular system'],
+      equipment: 'Chair',
+      caloriesBurned: 80,
+      image: '🪑',
+      tips: 'Perfect for office breaks or limited mobility'
+    },
+
+    // Additional Yoga Exercises
+    {
+      id: 'mountain-pose',
+      name: 'Mountain Pose',
+      category: 'yoga',
+      difficulty: 'beginner',
+      duration: 180,
+      instructions: [
+        'Stand tall with feet hip-width apart',
+        'Arms at sides, palms facing forward',
+        'Engage core and lengthen spine',
+        'Breathe deeply and hold',
+        'Focus on posture and balance'
+      ],
+      benefits: ['Improves posture', 'Builds awareness', 'Foundation for other poses'],
+      targetMuscles: ['Core', 'Legs', 'Posture muscles'],
+      equipment: 'None',
+      caloriesBurned: 15,
+      image: '⛰️',
+      tips: 'This is the foundation - perfect your alignment here'
+    },
+    {
+      id: 'tree-pose',
+      name: 'Tree Pose',
+      category: 'yoga',
+      difficulty: 'intermediate',
+      duration: 240,
+      instructions: [
+        'Stand in mountain pose',
+        'Shift weight to left foot',
+        'Place right foot on inner left thigh',
+        'Bring palms together at chest',
+        'Hold, then switch sides'
+      ],
+      benefits: ['Improves balance', 'Strengthens legs', 'Enhances focus'],
+      targetMuscles: ['Legs', 'Core', 'Balance'],
+      equipment: 'None',
+      caloriesBurned: 25,
+      image: '🌳',
+      tips: 'Use wall for support if needed, avoid placing foot on side of knee'
+    },
+    {
+      id: 'bridge-pose',
+      name: 'Bridge Pose',
+      category: 'yoga',
+      difficulty: 'beginner',
+      duration: 300,
+      instructions: [
+        'Lie on back with knees bent',
+        'Feet flat, hip-width apart',
+        'Lift hips up squeezing glutes',
+        'Interlace fingers under back',
+        'Hold and breathe deeply'
+      ],
+      benefits: ['Opens chest', 'Strengthens back', 'Energizing'],
+      targetMuscles: ['Glutes', 'Back', 'Chest'],
+      equipment: 'Yoga mat',
+      caloriesBurned: 30,
+      image: '🌉',
+      tips: 'Keep knees parallel and weight in heels'
+    },
+    {
+      id: 'legs-up-wall',
+      name: 'Legs Up the Wall',
+      category: 'yoga',
+      difficulty: 'beginner',
+      duration: 600, // 10 minutes
+      instructions: [
+        'Lie on back near a wall',
+        'Extend legs up the wall',
+        'Arms relaxed at sides',
+        'Close eyes and breathe deeply',
+        'Stay for 5-15 minutes'
+      ],
+      benefits: ['Improves circulation', 'Reduces swelling', 'Very relaxing'],
+      targetMuscles: ['Circulation', 'Nervous system'],
+      equipment: 'Wall, yoga mat',
+      caloriesBurned: 20,
+      image: '🧘',
+      tips: 'Use a pillow under your lower back for comfort'
+    },
+    {
+      id: 'cat-cow-flow',
+      name: 'Cat-Cow Flow',
+      category: 'yoga',
+      difficulty: 'beginner',
+      duration: 360,
+      instructions: [
+        'Start in tabletop position',
+        'Inhale, arch back and look up (cow)',
+        'Exhale, round spine and tuck chin (cat)',
+        'Flow smoothly between poses',
+        'Continue for 1-2 minutes'
+      ],
+      benefits: ['Spinal mobility', 'Stress relief', 'Warms up spine'],
+      targetMuscles: ['Spine', 'Core', 'Shoulders'],
+      equipment: 'Yoga mat',
+      caloriesBurned: 25,
+      image: '🐱',
+      tips: 'Move with your breath - inhale cow, exhale cat'
+    },
+    {
+      id: 'gentle-twist',
+      name: 'Seated Gentle Twist',
+      category: 'yoga',
+      difficulty: 'beginner',
+      duration: 300,
+      instructions: [
+        'Sit cross-legged on floor',
+        'Place right hand behind you',
+        'Left hand on right knee',
+        'Gently twist to the right',
+        'Hold, then switch sides'
+      ],
+      benefits: ['Spinal mobility', 'Aids digestion', 'Releases tension'],
+      targetMuscles: ['Spine', 'Obliques', 'Back'],
+      equipment: 'Yoga mat',
+      caloriesBurned: 20,
+      image: '🌪️',
+      tips: 'Twist from your core, not just your neck'
     }
   ];
 
