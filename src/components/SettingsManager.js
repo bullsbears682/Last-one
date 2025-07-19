@@ -456,7 +456,7 @@ const SettingsManager = ({ appData, updateAppData }) => {
                 <input
                   type="text"
                   className="form-input"
-                  placeholder="5'8\" or 173 cm"
+                  placeholder="5 feet 8 inches or 173 cm"
                   value={profileSettings.height}
                   onChange={(e) => setProfileSettings(prev => ({ ...prev, height: e.target.value }))}
                 />
