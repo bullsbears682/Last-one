@@ -28,7 +28,9 @@
     "lucide-react": "^0.294.0",
     "jspdf": "^2.5.1",
     "html2canvas": "^1.4.1",
-    "date-fns": "^2.30.0"
+    "date-fns": "^2.30.0",
+    "@infinex/ui": "^1.0.0",
+    "framer-motion": "^10.16.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.0",
