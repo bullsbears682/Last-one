@@ -26,8 +26,10 @@ import {
   BookOpen
 } from 'lucide-react';
 import { format, startOfDay, endOfDay, subDays, isToday } from 'date-fns';
+import useSound from '../hooks/useSound';
 
 const ExerciseManagement = ({ appData, updateAppData }) => {
+  const { soundPresets } = useSound();
   const [activeView, setActiveView] = useState('library'); // 'library', 'workout', 'history', 'analytics'
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedDifficulty, setSelectedDifficulty] = useState('all');
@@ -815,14 +817,35 @@ const ExerciseManagement = ({ appData, updateAppData }) => {
     let interval = null;
     if (workoutTimer.isRunning) {
       interval = setInterval(() => {
-        setWorkoutTimer(prev => ({
-          ...prev,
-          time: prev.time + 1
-        }));
+        setWorkoutTimer(prev => {
+          const newTime = prev.time + 1;
+          
+          // Play interval sounds for certain exercises
+          if (prev.exercise) {
+            // Play interval sound every 30 seconds for cardio exercises
+            if (prev.exercise.category === 'cardio' && newTime % 30 === 0 && newTime > 0) {
+              soundPresets.exerciseInterval();
+            }
+            // Play rest alert at 75% completion for strength exercises
+            else if (prev.exercise.category === 'strengthening' && 
+                    newTime === Math.floor(prev.exercise.duration * 0.75)) {
+              soundPresets.restTime();
+            }
+            // Play interval sound every 60 seconds for longer exercises
+            else if (prev.exercise.duration > 300 && newTime % 60 === 0 && newTime > 0) {
+              soundPresets.exerciseInterval();
+            }
+          }
+          
+          return {
+            ...prev,
+            time: newTime
+          };
+        });
       }, 1000);
     }
     return () => clearInterval(interval);
-  }, [workoutTimer.isRunning]);
+  }, [workoutTimer.isRunning, soundPresets]);
 
   // Filter exercises
   const getFilteredExercises = () => {
@@ -840,6 +863,7 @@ const ExerciseManagement = ({ appData, updateAppData }) => {
 
   // Start workout
   const startWorkout = (exercise) => {
+    soundPresets.startExercise();
     setCurrentWorkout(exercise);
     setWorkoutTimer({
       isRunning: true,
@@ -898,6 +922,9 @@ const ExerciseManagement = ({ appData, updateAppData }) => {
 
     updateAppData({ exercises: updatedExercises });
 
+    // Play completion sound
+    soundPresets.exerciseComplete();
+
     // Reset workout state
     setCurrentWorkout(null);
     setWorkoutTimer({ isRunning: false, time: 0, exercise: null });
@@ -915,6 +942,7 @@ const ExerciseManagement = ({ appData, updateAppData }) => {
   // Stop workout
   const stopWorkout = () => {
     if (window.confirm('Are you sure you want to stop this workout?')) {
+      soundPresets.stopExercise();
       setCurrentWorkout(null);
       setWorkoutTimer({ isRunning: false, time: 0, exercise: null });
       setActiveView('library');

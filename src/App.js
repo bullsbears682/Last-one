@@ -8,7 +8,9 @@ import {
   Pill, 
   Settings, 
   BookOpen,
-  BarChart3
+  BarChart3,
+  Volume2,
+  Brain
 } from 'lucide-react';
 
 // Import all main components
@@ -20,12 +22,17 @@ import AppointmentManager from './components/AppointmentManager';
 import EducationalContent from './components/EducationalContent';
 import ReportsAnalytics from './components/ReportsAnalytics';
 import SettingsManager from './components/SettingsManager';
+import SoundSettings from './components/SoundSettings';
+import MeditationCenter from './components/MeditationCenter';
 
 // Import hooks and utilities
 import { useLocalStorage } from './hooks/useLocalStorage';
 import { useNotifications } from './hooks/useNotifications';
 import ErrorBoundary from './components/common/ErrorBoundary';
 import LoadingScreen from './components/common/LoadingScreen';
+
+// Import sound system CSS
+import './styles/sound-system.css';
 
 const App = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -92,10 +99,22 @@ const App = () => {
       component: EducationalContent
     },
     {
+      id: 'meditation',
+      label: 'Meditation',
+      icon: Brain,
+      component: MeditationCenter
+    },
+    {
       id: 'reports',
       label: 'Reports',
       icon: BarChart3,
       component: ReportsAnalytics
+    },
+    {
+      id: 'sound-settings',
+      label: 'Sound',
+      icon: Volume2,
+      component: SoundSettings
     },
     {
       id: 'settings',

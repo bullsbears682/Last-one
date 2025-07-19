@@ -24,8 +24,10 @@ import {
   Target
 } from 'lucide-react';
 import { format, startOfDay, endOfDay, addDays, isToday, isTomorrow, parseISO, addHours } from 'date-fns';
+import useSound from '../hooks/useSound';
 
 const MedicationTracker = ({ appData, updateAppData }) => {
+  const { soundPresets } = useSound();
   const [activeView, setActiveView] = useState('overview'); // 'overview', 'add', 'history', 'analytics'
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingMedication, setEditingMedication] = useState(null);
@@ -151,6 +153,9 @@ const MedicationTracker = ({ appData, updateAppData }) => {
     });
 
     updateAppData({ medications: updatedMedications });
+    
+    // Play success sound when medication is taken
+    soundPresets.success();
   };
 
   // Handle form submission
